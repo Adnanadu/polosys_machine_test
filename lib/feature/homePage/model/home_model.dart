@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'home_model.freezed.dart';
+part 'home_model.g.dart';
 
 @freezed
 class HomeModel with _$HomeModel {
@@ -12,6 +13,10 @@ class HomeModel with _$HomeModel {
     @JsonKey(name: "image") String? image,
     @JsonKey(name: "rating") Rating? rating,
   }) = _HomeModel;
+
+  ///from json
+  factory HomeModel.fromJson(Map<String, dynamic> json) =>
+      _$HomeModelFromJson(json);
 }
 
 enum Category {
@@ -31,4 +36,7 @@ class Rating with _$Rating {
     @JsonKey(name: "rate") double? rate,
     @JsonKey(name: "count") int? count,
   }) = _Rating;
+
+  ///from json
+  factory Rating.fromJson(Map<String, dynamic> json) => _$RatingFromJson(json);
 }

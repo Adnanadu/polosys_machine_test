@@ -14,6 +14,10 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+HomeModel _$HomeModelFromJson(Map<String, dynamic> json) {
+  return _HomeModel.fromJson(json);
+}
+
 /// @nodoc
 mixin _$HomeModel {
   @JsonKey(name: "id")
@@ -30,6 +34,9 @@ mixin _$HomeModel {
   String? get image => throw _privateConstructorUsedError;
   @JsonKey(name: "rating")
   Rating? get rating => throw _privateConstructorUsedError;
+
+  /// Serializes this HomeModel to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of HomeModel
   /// with the given fields replaced by the non-null parameter values.
@@ -201,7 +208,7 @@ class __$$HomeModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$HomeModelImpl implements _HomeModel {
   const _$HomeModelImpl(
       {@JsonKey(name: "id") this.id,
@@ -211,6 +218,9 @@ class _$HomeModelImpl implements _HomeModel {
       @JsonKey(name: "category") this.category,
       @JsonKey(name: "image") this.image,
       @JsonKey(name: "rating") this.rating});
+
+  factory _$HomeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$HomeModelImplFromJson(json);
 
   @override
   @JsonKey(name: "id")
@@ -255,6 +265,7 @@ class _$HomeModelImpl implements _HomeModel {
             (identical(other.rating, rating) || other.rating == rating));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, title, price, description, category, image, rating);
@@ -266,6 +277,13 @@ class _$HomeModelImpl implements _HomeModel {
   @pragma('vm:prefer-inline')
   _$$HomeModelImplCopyWith<_$HomeModelImpl> get copyWith =>
       __$$HomeModelImplCopyWithImpl<_$HomeModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$HomeModelImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _HomeModel implements HomeModel {
@@ -277,6 +295,9 @@ abstract class _HomeModel implements HomeModel {
       @JsonKey(name: "category") final Category? category,
       @JsonKey(name: "image") final String? image,
       @JsonKey(name: "rating") final Rating? rating}) = _$HomeModelImpl;
+
+  factory _HomeModel.fromJson(Map<String, dynamic> json) =
+      _$HomeModelImpl.fromJson;
 
   @override
   @JsonKey(name: "id")
@@ -308,12 +329,19 @@ abstract class _HomeModel implements HomeModel {
       throw _privateConstructorUsedError;
 }
 
+Rating _$RatingFromJson(Map<String, dynamic> json) {
+  return _Rating.fromJson(json);
+}
+
 /// @nodoc
 mixin _$Rating {
   @JsonKey(name: "rate")
   double? get rate => throw _privateConstructorUsedError;
   @JsonKey(name: "count")
   int? get count => throw _privateConstructorUsedError;
+
+  /// Serializes this Rating to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Rating
   /// with the given fields replaced by the non-null parameter values.
@@ -404,10 +432,13 @@ class __$$RatingImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$RatingImpl implements _Rating {
   const _$RatingImpl(
       {@JsonKey(name: "rate") this.rate, @JsonKey(name: "count") this.count});
+
+  factory _$RatingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RatingImplFromJson(json);
 
   @override
   @JsonKey(name: "rate")
@@ -430,6 +461,7 @@ class _$RatingImpl implements _Rating {
             (identical(other.count, count) || other.count == count));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, rate, count);
 
@@ -440,12 +472,21 @@ class _$RatingImpl implements _Rating {
   @pragma('vm:prefer-inline')
   _$$RatingImplCopyWith<_$RatingImpl> get copyWith =>
       __$$RatingImplCopyWithImpl<_$RatingImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$RatingImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _Rating implements Rating {
   const factory _Rating(
       {@JsonKey(name: "rate") final double? rate,
       @JsonKey(name: "count") final int? count}) = _$RatingImpl;
+
+  factory _Rating.fromJson(Map<String, dynamic> json) = _$RatingImpl.fromJson;
 
   @override
   @JsonKey(name: "rate")
