@@ -1,28 +1,19 @@
 import 'dart:convert';
-import 'dart:developer';
-
-import 'package:polosys_machine_test/feature/homePage/model/home_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:polosys_machine_test/feature/homePage/model/home_model.dart';
 
 class ApiServices {
-  static const String baseUrl = "'https://fakestoreapi.com/";
-  static const String endPoint = "products";
-  final String url = baseUrl + endPoint;
-  // <List<HomeModel>>
-  Future fetchData() async {
-    final response = await http.get(Uri.parse(url));
-    try {
-      if (response.statusCode == 200) {
-        final parsed = json.decode(response.body);
-        final data =
-            parsed.map<HomeModel>((json) => HomeModel.fromJson(json)).toList();
-        log(data);
-        return data;
-      } else {
-        throw Exception('Failed to load data');
-      }
-    } catch (e) {
-      log(e.toString());
+  Future<List<HomeModel>> fetchData() async {
+    final response =
+        await http.get(Uri.parse('https://fakestoreapi.com/products'));
+    if (response.statusCode == 200) {
+      final List<dynamic> data = jsonDecode(response.body);
+      return data
+          .whereType<Map<String, dynamic>>()
+          .map((json) => HomeModel.fromJson(json))
+          .toList();
+    } else {
+      throw Exception('Failed to load products');
     }
   }
 }

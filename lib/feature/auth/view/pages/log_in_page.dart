@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:polosys_machine_test/feature/auth/view/widgets/custom_button_widget.dart';
 import 'package:polosys_machine_test/feature/auth/view/widgets/text_field_widget.dart';
 
 class LogInPage extends HookWidget {
@@ -121,13 +120,6 @@ class LogInPage extends HookWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  // Sign In Button
-                  // CustomButton(
-                  //   text: 'Sign in',
-                  //   onPressed: () {
-                  //     //  Add sign-in logic
-                  //   },
-                  // ),
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 16),

@@ -20,19 +20,12 @@ HomeModel _$HomeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$HomeModel {
-  @JsonKey(name: "id")
   int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "title")
   String? get title => throw _privateConstructorUsedError;
-  @JsonKey(name: "price")
   double? get price => throw _privateConstructorUsedError;
-  @JsonKey(name: "description")
   String? get description => throw _privateConstructorUsedError;
-  @JsonKey(name: "category")
-  Category? get category => throw _privateConstructorUsedError;
-  @JsonKey(name: "image")
+  String? get category => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
-  @JsonKey(name: "rating")
   Rating? get rating => throw _privateConstructorUsedError;
 
   /// Serializes this HomeModel to a JSON map.
@@ -51,13 +44,13 @@ abstract class $HomeModelCopyWith<$Res> {
       _$HomeModelCopyWithImpl<$Res, HomeModel>;
   @useResult
   $Res call(
-      {@JsonKey(name: "id") int? id,
-      @JsonKey(name: "title") String? title,
-      @JsonKey(name: "price") double? price,
-      @JsonKey(name: "description") String? description,
-      @JsonKey(name: "category") Category? category,
-      @JsonKey(name: "image") String? image,
-      @JsonKey(name: "rating") Rating? rating});
+      {int? id,
+      String? title,
+      double? price,
+      String? description,
+      String? category,
+      String? image,
+      Rating? rating});
 
   $RatingCopyWith<$Res>? get rating;
 }
@@ -105,7 +98,7 @@ class _$HomeModelCopyWithImpl<$Res, $Val extends HomeModel>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as Category?,
+              as String?,
       image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -141,13 +134,13 @@ abstract class _$$HomeModelImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: "id") int? id,
-      @JsonKey(name: "title") String? title,
-      @JsonKey(name: "price") double? price,
-      @JsonKey(name: "description") String? description,
-      @JsonKey(name: "category") Category? category,
-      @JsonKey(name: "image") String? image,
-      @JsonKey(name: "rating") Rating? rating});
+      {int? id,
+      String? title,
+      double? price,
+      String? description,
+      String? category,
+      String? image,
+      Rating? rating});
 
   @override
   $RatingCopyWith<$Res>? get rating;
@@ -194,7 +187,7 @@ class __$$HomeModelImplCopyWithImpl<$Res>
       category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as Category?,
+              as String?,
       image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -211,37 +204,30 @@ class __$$HomeModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$HomeModelImpl implements _HomeModel {
   const _$HomeModelImpl(
-      {@JsonKey(name: "id") this.id,
-      @JsonKey(name: "title") this.title,
-      @JsonKey(name: "price") this.price,
-      @JsonKey(name: "description") this.description,
-      @JsonKey(name: "category") this.category,
-      @JsonKey(name: "image") this.image,
-      @JsonKey(name: "rating") this.rating});
+      {this.id,
+      this.title,
+      this.price,
+      this.description,
+      this.category,
+      this.image,
+      this.rating});
 
   factory _$HomeModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$HomeModelImplFromJson(json);
 
   @override
-  @JsonKey(name: "id")
   final int? id;
   @override
-  @JsonKey(name: "title")
   final String? title;
   @override
-  @JsonKey(name: "price")
   final double? price;
   @override
-  @JsonKey(name: "description")
   final String? description;
   @override
-  @JsonKey(name: "category")
-  final Category? category;
+  final String? category;
   @override
-  @JsonKey(name: "image")
   final String? image;
   @override
-  @JsonKey(name: "rating")
   final Rating? rating;
 
   @override
@@ -288,37 +274,30 @@ class _$HomeModelImpl implements _HomeModel {
 
 abstract class _HomeModel implements HomeModel {
   const factory _HomeModel(
-      {@JsonKey(name: "id") final int? id,
-      @JsonKey(name: "title") final String? title,
-      @JsonKey(name: "price") final double? price,
-      @JsonKey(name: "description") final String? description,
-      @JsonKey(name: "category") final Category? category,
-      @JsonKey(name: "image") final String? image,
-      @JsonKey(name: "rating") final Rating? rating}) = _$HomeModelImpl;
+      {final int? id,
+      final String? title,
+      final double? price,
+      final String? description,
+      final String? category,
+      final String? image,
+      final Rating? rating}) = _$HomeModelImpl;
 
   factory _HomeModel.fromJson(Map<String, dynamic> json) =
       _$HomeModelImpl.fromJson;
 
   @override
-  @JsonKey(name: "id")
   int? get id;
   @override
-  @JsonKey(name: "title")
   String? get title;
   @override
-  @JsonKey(name: "price")
   double? get price;
   @override
-  @JsonKey(name: "description")
   String? get description;
   @override
-  @JsonKey(name: "category")
-  Category? get category;
+  String? get category;
   @override
-  @JsonKey(name: "image")
   String? get image;
   @override
-  @JsonKey(name: "rating")
   Rating? get rating;
 
   /// Create a copy of HomeModel
@@ -335,10 +314,8 @@ Rating _$RatingFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Rating {
-  @JsonKey(name: "rate")
-  double? get rate => throw _privateConstructorUsedError;
-  @JsonKey(name: "count")
-  int? get count => throw _privateConstructorUsedError;
+  int? get rate => throw _privateConstructorUsedError;
+  double? get count => throw _privateConstructorUsedError;
 
   /// Serializes this Rating to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -354,9 +331,7 @@ abstract class $RatingCopyWith<$Res> {
   factory $RatingCopyWith(Rating value, $Res Function(Rating) then) =
       _$RatingCopyWithImpl<$Res, Rating>;
   @useResult
-  $Res call(
-      {@JsonKey(name: "rate") double? rate,
-      @JsonKey(name: "count") int? count});
+  $Res call({int? rate, double? count});
 }
 
 /// @nodoc
@@ -381,11 +356,11 @@ class _$RatingCopyWithImpl<$Res, $Val extends Rating>
       rate: freezed == rate
           ? _value.rate
           : rate // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
     ) as $Val);
   }
 }
@@ -397,9 +372,7 @@ abstract class _$$RatingImplCopyWith<$Res> implements $RatingCopyWith<$Res> {
       __$$RatingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: "rate") double? rate,
-      @JsonKey(name: "count") int? count});
+  $Res call({int? rate, double? count});
 }
 
 /// @nodoc
@@ -422,11 +395,11 @@ class __$$RatingImplCopyWithImpl<$Res>
       rate: freezed == rate
           ? _value.rate
           : rate // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       count: freezed == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
     ));
   }
 }
@@ -434,18 +407,15 @@ class __$$RatingImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$RatingImpl implements _Rating {
-  const _$RatingImpl(
-      {@JsonKey(name: "rate") this.rate, @JsonKey(name: "count") this.count});
+  const _$RatingImpl({this.rate, this.count});
 
   factory _$RatingImpl.fromJson(Map<String, dynamic> json) =>
       _$$RatingImplFromJson(json);
 
   @override
-  @JsonKey(name: "rate")
-  final double? rate;
+  final int? rate;
   @override
-  @JsonKey(name: "count")
-  final int? count;
+  final double? count;
 
   @override
   String toString() {
@@ -482,18 +452,14 @@ class _$RatingImpl implements _Rating {
 }
 
 abstract class _Rating implements Rating {
-  const factory _Rating(
-      {@JsonKey(name: "rate") final double? rate,
-      @JsonKey(name: "count") final int? count}) = _$RatingImpl;
+  const factory _Rating({final int? rate, final double? count}) = _$RatingImpl;
 
   factory _Rating.fromJson(Map<String, dynamic> json) = _$RatingImpl.fromJson;
 
   @override
-  @JsonKey(name: "rate")
-  double? get rate;
+  int? get rate;
   @override
-  @JsonKey(name: "count")
-  int? get count;
+  double? get count;
 
   /// Create a copy of Rating
   /// with the given fields replaced by the non-null parameter values.

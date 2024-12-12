@@ -12,11 +12,9 @@ _$HomeModelImpl _$$HomeModelImplFromJson(Map<String, dynamic> json) =>
       title: json['title'] as String?,
       price: (json['price'] as num?)?.toDouble(),
       description: json['description'] as String?,
-      category: $enumDecodeNullable(_$CategoryEnumMap, json['category']),
+      category: json['category'] as String?,
       image: json['image'] as String?,
-      rating: json['rating'] == null
-          ? null
-          : Rating.fromJson(json['rating'] as Map<String, dynamic>),
+      rating: json['rating'] == null ? null : Rating.fromJson(json['rating']),
     );
 
 Map<String, dynamic> _$$HomeModelImplToJson(_$HomeModelImpl instance) =>
@@ -25,21 +23,14 @@ Map<String, dynamic> _$$HomeModelImplToJson(_$HomeModelImpl instance) =>
       'title': instance.title,
       'price': instance.price,
       'description': instance.description,
-      'category': _$CategoryEnumMap[instance.category],
+      'category': instance.category,
       'image': instance.image,
       'rating': instance.rating,
     };
 
-const _$CategoryEnumMap = {
-  Category.electronics: 'electronics',
-  Category.jewelery: 'jewelery',
-  Category.men_s_clothing: "men's clothing",
-  Category.women_s_clothing: "women's clothing",
-};
-
 _$RatingImpl _$$RatingImplFromJson(Map<String, dynamic> json) => _$RatingImpl(
-      rate: (json['rate'] as num?)?.toDouble(),
-      count: (json['count'] as num?)?.toInt(),
+      rate: (json['rate'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$RatingImplToJson(_$RatingImpl instance) =>
